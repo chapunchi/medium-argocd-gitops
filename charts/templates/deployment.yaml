@@ -17,3 +17,6 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
             - containerPort: 80
+          env:
+            - name: APP_ENV
+              value: "{{ .Values.env.APP_ENV }}"
