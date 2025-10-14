@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-app-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:chapunchi/medium-argocd-gitops.git
+    path: charts
+    targetRevision: dev
+    helm:
+      valueFiles:
+        - ../../envs/dev/values-dev.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
