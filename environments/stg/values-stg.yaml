@@ -1,0 +1,24 @@
+replicaCount: 1
+image:
+  repository: 225533490588.dkr.ecr.ap-southeast-1.amazonaws.com/argocd-stg
+  tag: 1.0.1
+
+env:
+  APP_ENV: stg
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 80
+
+ingress:
+  enabled: true
+  host: stg.githubproj.click
+  className: alb
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}]'
+    alb.ingress.kubernetes.io/target-type: ip
+  tls: false
+  tlsSecret: ""
