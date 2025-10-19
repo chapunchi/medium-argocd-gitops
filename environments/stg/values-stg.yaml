@@ -20,5 +20,6 @@ ingress:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}]'
     alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/target-group-arn: arn:aws:elasticloadbalancing:ap-southeast-1:225533490588:targetgroup/k8s-stg-argocdap-f701d77860/ccf31128db495bf0
   tls: false
   tlsSecret: ""
