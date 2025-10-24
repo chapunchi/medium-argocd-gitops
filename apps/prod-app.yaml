@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: git@github.com:chapunchi/medium-argocd-gitops.git
     path: charts
-    targetRevision: master
+    targetRevision: dev
     helm:
       valueFiles:
         - ../environments/prod/values-prod.yaml
