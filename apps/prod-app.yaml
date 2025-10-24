@@ -11,7 +11,7 @@ spec:
     targetRevision: master
     helm:
       valueFiles:
-        - ../environments/stg/values-prod.yaml
+        - ../environments/prod/values-prod.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: prod
