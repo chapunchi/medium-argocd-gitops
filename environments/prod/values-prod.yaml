@@ -3,6 +3,9 @@ image:
   repository: 225533490588.dkr.ecr.ap-southeast-1.amazonaws.com/argocd-prod
   tag: 1.0.1
 
+env:
+  APP_ENV: prod
+
 service:
   type: ClusterIP
   port: 80
