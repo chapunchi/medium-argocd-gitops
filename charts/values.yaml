@@ -1,0 +1,16 @@
+replicaCount: 1
+image:
+  repository: 225533490588.dkr.ecr.ap-southeast-1.amazonaws.com/argocd
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 80
+
+ingress:
+  enabled: false
+  host: githubproj.click
+  className: alb
+  annotations: {}
+  tls: false
+  tlsSecret: ""
